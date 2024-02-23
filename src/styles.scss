@@ -1,17 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 $theme-colors: (
-    "primary":    #00586F,
-    "secondary":  #F5C132,
-    "success":    #44A45F,
-    "info":       #3CA6D6,
-    "warning":    #E6D422,
-    "danger":     #E6173E,
-    "light":      #7FABB7,
-    "dark":       #002C37
+    "primary": #00586F,
+    "secondary": #F5C132,
+    "success": #44A45F,
+    "info": #3CA6D6,
+    "warning": #E6D422,
+    "danger": #E6173E,
+    "light": #7FABB7,
+    "dark": #002C37
 );
+
+$font-family-sans-serif: "Montserrat";
+
+$font-sizes: (
+  1: 36px,
+  2: 34px,
+  3: 33px,
+  4: 24px,
+  5: 24px,
+  6: 20px
+) !default;
+
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-
