@@ -1,0 +1,134 @@
+{
+  "uuid": "08b76156-212d-414a-9e8a-a193b1e35a32",
+  "lastMigration": 32,
+  "name": "Clientes",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "f8155780-59f5-49e6-840b-19c85908aa15",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "clientes",
+      "responses": [
+        {
+          "uuid": "10a81f2f-cbe9-4ef4-b2bd-e243ba967d81",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "gk0z",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9da0d18f-f84d-4143-9b5f-6f84b24452d7",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "7915d507-eef6-4b81-b78d-d52f44227c1a",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "f8155780-59f5-49e6-840b-19c85908aa15"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "5fdf2343-ee25-45b1-b7d0-a38a2e9133f8",
+      "id": "gk0z",
+      "name": "Clientes",
+      "documentation": "",
+      "value": "[{\"id\":1,\"nomeCliente\":\"Gilberto\",\"cpf\":\"111.222.333-55\",\"dataNascimento\":\"2024-02-02\",\"rendaMensal\":7000,\"email\":\"gilberto@teste.com\",\"dataCadastro\":\"Thu, 22 Feb 2024 17:25:01 GMT\"},{\"id\":2,\"nomeCliente\":\"Ana\",\"cpf\":\"111.111.111-11\",\"dataNascimento\":\"2024-01-31\",\"rendaMensal\":5000,\"email\":\"ana@teste.com\",\"dataCadastro\":\"Thu, 22 Feb 2024 17:25:01 GMT\"}] "
+    }
+  ],
+  "callbacks": []
+}
