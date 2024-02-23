@@ -8,7 +8,7 @@ import { NgTemplateOutlet } from '@angular/common';
   standalone: true,
   imports: [NgbToastModule, NgTemplateOutlet],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   messageService = inject(MessageService);

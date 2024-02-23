@@ -10,7 +10,7 @@ import { MessageService } from '../../services/message.service';
   standalone: true,
   imports: [FormularioClienteComponent],
   templateUrl: './editar-cliente.component.html',
-  styleUrl: './editar-cliente.component.css'
+  styleUrl: './editar-cliente.component.scss'
 })
 export class EditarClienteComponent {
   activeModal = inject(NgbActiveModal)
@@ -32,7 +32,7 @@ export class EditarClienteComponent {
   salvar() {
     this.clienteService.updateCliente(this.cliente)
       .subscribe(cliente => {        
-        this.messageService.showSuccess("Cliente '" + this.cliente.nomeCliente + "' atualizado com sucesso.")
+        this.messageService.showSuccess("Cliente atualizado com sucesso.")
         this.activeModal.dismiss('Save success');
       });
   }

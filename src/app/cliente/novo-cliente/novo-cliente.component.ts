@@ -11,7 +11,7 @@ import { MessageService } from '../../services/message.service';
   standalone: true,
   imports: [FormularioClienteComponent],
   templateUrl: './novo-cliente.component.html',
-  styleUrl: './novo-cliente.component.css'
+  styleUrl: './novo-cliente.component.scss'
 })
 export class NovoClienteComponent {
   activeModal = inject(NgbActiveModal)
@@ -25,7 +25,7 @@ export class NovoClienteComponent {
   salvar() {
     this.clienteService.addCliente(this.cliente)
       .subscribe(cliente => {
-        this.messageService.showSuccess("Cliente '" + this.cliente.nomeCliente + "' criado com sucesso.")
+        this.messageService.showSuccess("Cliente criado com sucesso.")
         this.activeModal.dismiss('Create success')
       });
   }

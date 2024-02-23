@@ -9,7 +9,7 @@ import { HeaderComponent } from './layout/header/header.component';
   imports: [CommonModule, RouterOutlet,HeaderComponent],
   providers:[],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'CadastroClienteAngularMockoon';

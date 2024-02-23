@@ -11,7 +11,7 @@ import { DeletarClienteComponent } from '../deletar-cliente/deletar-cliente.comp
   standalone: true,
   imports: [],
   templateUrl: './listagem-clientes.component.html',
-  styleUrl: './listagem-clientes.component.css'
+  styleUrl: './listagem-clientes.component.scss'
 })
 export class ListagemClientesComponent {
   clientes: Cliente[] = []

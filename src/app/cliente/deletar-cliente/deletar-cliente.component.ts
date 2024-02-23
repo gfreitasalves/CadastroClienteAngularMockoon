@@ -8,7 +8,7 @@ import { Cliente } from '../../models/cliente';
   standalone: true,
   imports: [],
   templateUrl: './deletar-cliente.component.html',
-  styleUrl: './deletar-cliente.component.css'
+  styleUrl: './deletar-cliente.component.scss'
 })
 export class DeletarClienteComponent {
   activeModal = inject(NgbActiveModal)

@@ -7,7 +7,7 @@ import { Cliente } from '../../models/cliente';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './formulario-cliente.component.html',
-  styleUrl: './formulario-cliente.component.css'
+  styleUrl: './formulario-cliente.component.scss'
 })
 export class FormularioClienteComponent {
   @Input({ required: false }) cliente!: Cliente  
