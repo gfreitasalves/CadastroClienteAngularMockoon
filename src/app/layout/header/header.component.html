@@ -14,7 +14,15 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="clientes">Clientes</a>
                 </li>
-            </ul>
+            </ul>            
         </div>
-    </div>
+    </div>    
 </nav>
+<div class="position-absolute top-0 end-0">
+    @for (toast of messageService.toasts; track toast) {
+    <ngb-toast [class]="toast.classname" [autohide]="true" [delay]="toast.delay || 3000"
+        (hidden)="messageService.hide(toast)">
+        {{toast.message}}
+    </ngb-toast>
+    }
+</div>

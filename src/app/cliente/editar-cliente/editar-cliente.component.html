@@ -1,1 +1,13 @@
-<p>editar-cliente works!</p>
+<div class="modal-header">
+    <h4 class="modal-title">Editando: {{cliente?.nomeCliente}}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+    @if(cliente != undefined){
+        <app-formulario-cliente [cliente]="cliente" (clienteAtualizadoEvent)="updateClient($event)"></app-formulario-cliente>    
+    }
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancelar</button>
+</div>

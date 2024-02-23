@@ -1,0 +1,14 @@
+<form [formGroup]="formCliente">
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" formControlName="nomeCliente" required>
+    </div>
+    <div class="form-group">
+        <label for="nome">CPF</label>
+        <input type="text" class="form-control" name="cpf" id="cpf" formControlName="cpf" required>
+    </div>
+    <div class="form-group">
+        <label for="dataNascimento">Data de nascimento</label>
+        <input type="date" class="form-control" name="dataNascimento" id="dataNascimento" formControlName="dataNascimento">
+    </div>
+</form>
