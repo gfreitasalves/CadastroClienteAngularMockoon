@@ -4,10 +4,74 @@
 </div>
 <div class="modal-body">
     @if(cliente != undefined){
-        <app-formulario-cliente [cliente]="cliente" (clienteAtualizadoEvent)="updateClient($event)"></app-formulario-cliente>    
+    <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" formControlName="email" required>
+
+            @if(submitted && formCliente.controls['email'].errors && formCliente.controls['email'].errors['required']){
+            <div class="text-danger">
+                Campo obrigatório.
+            </div>
+            }
+            @if(submitted && formCliente.controls['email'].errors && formCliente.controls['email'].errors['email']){
+            <div class="text-danger">
+                Email inválido.
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nomeCliente" id="nomeCliente" formControlName="nomeCliente"
+                required>
+            @if(submitted && formCliente.controls['nomeCliente'].errors &&
+            formCliente.controls['nomeCliente'].errors['required']){
+            <div class="text-danger">
+                Campo obrigatório.
+            </div>
+            }
+            @if(submitted && formCliente.controls['nomeCliente'].errors &&
+            formCliente.controls['nomeCliente'].errors['nomeInvalido']){
+            <div class="text-danger">
+                {{formCliente.controls['nomeCliente'].errors['mensagem']}}
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label for="nome">CPF</label>
+            <input type="text" class="form-control" name="cpf" id="cpf" formControlName="cpf" required >            
+        </div>
+        <div class="form-group">
+            <label for="dataNascimento">Data de nascimento</label>
+            <input type="date" class="form-control" name="dataNascimento" id="dataNascimento"
+                formControlName="dataNascimento">
+            @if(submitted && formCliente.controls['dataNascimento'].errors &&
+            formCliente.controls['dataNascimento'].errors['required']){
+            <div class="text-danger">
+                Campo obrigatório.
+            </div>
+            }
+            @if(submitted && formCliente.controls['dataNascimento'].errors &&
+            formCliente.controls['dataNascimento'].errors['idadeInvalida']){
+            <div class="text-danger">
+                {{formCliente.controls['dataNascimento'].errors['mensagem']}}
+            </div>
+            }
+        </div>
+        <div class="form-group">
+            <label for="rendaMensal">Renda Mensal</label>
+            <input type="number" class="form-control" name="rendaMensal" id="rendaMensal" formControlName="rendaMensal">
+            @if(submitted && formCliente.controls['rendaMensal'].errors &&
+            formCliente.controls['rendaMensal'].errors['required']){
+            <div class="text-danger">
+                Campo obrigatório.
+            </div>
+            }
+        </div>
+    </form>
     }
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-primary" (click)="salvar()">Salvar</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
     <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancelar</button>
 </div>

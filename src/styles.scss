@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-$theme-colors: (
-    "primary": #00586F,
-    "secondary": #F5C132,
-    "success": #44A45F,
-    "info": #3CA6D6,
-    "warning": #E6D422,
-    "danger": #E6173E,
-    "light": #7FABB7,
-    "dark": #002C37
-);
+$primary:       #00586F;
+$secondary:     #F5C132;
+$success:       #44A45F;
+$info:          #3CA6D6;
+$warning:       #E6D422;
+$danger:        #E6173E;
+$light:         #7FABB7;
+$dark:          #002C37;
+
+$table-bg-scale:              0%;
 
 $font-family-sans-serif: "Montserrat";
 

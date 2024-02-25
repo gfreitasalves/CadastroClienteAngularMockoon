@@ -33,6 +33,7 @@ export class ClienteService {
   }
 
   addCliente(cliente: Cliente): Observable<Cliente> {
+    cliente.dataCadastro = new Date();
     return this.http.post<Cliente>(environment.clienteApiUrl, cliente, this.httpOptions).pipe(
       tap((newCliente: Cliente) => this.log(`added cliente w/ id=${newCliente.id}`)),
       catchError(this.handleError<Cliente>('addCliente'))
