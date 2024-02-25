@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cliente } from '../models/cliente';
-import { Observable, catchError, of, tap } from 'rxjs';
+import { Cliente, ClientePaginado } from '../models/cliente';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 import { environment } from '../../environments/environment.development';
 
@@ -16,12 +16,21 @@ export class ClienteService {
   constructor(private http: HttpClient,
     private messageService: MessageService) { }
 
-  getClientes(): Observable<Cliente[]> {
-    return this.http.get<Cliente[]>(environment.clienteApiUrl)
+  getClientes(limit: number, page: number, orderField: string = '', orderDirection: string = '', textoFiltro: string = ''): Observable<ClientePaginado> {
+
+    return this.http.get<Cliente[]>(this.buildGetClientesFilterUrl(limit, page, orderField, orderDirection, textoFiltro),
+      { observe: 'response', transferCache: { includeHeaders: ['X-filtered-count'] } })
       .pipe(
-        tap(_ => this.log('fetched clients')),
-        catchError(this.handleError<Cliente[]>('getClients', []))
+        map((response: HttpResponse<Cliente[]>) => {
+          const count = response.headers.get('X-filtered-count')
+          console.log(count)
+          return new ClientePaginado(parseInt(count as string, 10), response.body as Cliente[])
+        })
       );
+  }
+
+  private buildGetClientesFilterUrl(limit: number, page: number, orderField: string = '', orderDirection: string = '', textoFiltro: string = ''): string {
+    return environment.clienteApiUrl + "?page=" + page + "&limit=" + limit + (textoFiltro != '' ? "&search=" + textoFiltro : "") + (orderField != '' ? ("&sort=" + orderField + "&order=" + orderDirection) : "")
   }
 
   getCliente(id: number): Observable<Cliente> {
@@ -68,7 +77,7 @@ export class ClienteService {
     };
   }
 
-  private log(message: string) {
+  private log(message: any) {
     this.messageService.log(`ClienteService: ${message}`);
   }
 }

@@ -58,7 +58,6 @@ export class NovoClienteComponent {
           this.messageService.showSuccess("Cliente criado com sucesso.")
           this.activeModal.dismiss('Create success')
         });
-    }
-    console.log(this.formCliente.controls['dataNascimento'].errors)
+    }    
   }
 }

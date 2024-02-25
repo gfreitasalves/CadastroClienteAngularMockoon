@@ -60,14 +60,14 @@ export class EditarClienteComponent {
     })
   }
 
-  onSubmit() {
-    if (this.formCliente?.valid) {
-      this.clienteService.updateCliente(this.formCliente.value)
-        .subscribe(cliente => {
-          this.messageService.showSuccess("Cliente atualizado com sucesso.")
-          this.activeModal.dismiss('Save success');
-        });
+  onSubmit() {   
+    this.submitted = true
+    if (this.formCliente?.valid) {      
+       this.clienteService.updateCliente(this.formCliente.getRawValue())
+         .subscribe(cliente => {
+           this.messageService.showSuccess("Cliente atualizado com sucesso.")
+           this.activeModal.dismiss('Save success');
+         });
     }
-
   }
 }

@@ -17,3 +17,14 @@ export class Cliente {
     this.dataCadastro = null
   }
 }
+
+
+export class ClientePaginado {
+  count: number  
+  clientes:Cliente[]
+
+  constructor(count:number, clientes: Cliente[]) {
+    this.count = count
+    this.clientes = clientes
+  }
+}

@@ -1,12 +1,21 @@
 <button type="button" class="btn btn-dark mb-5 float-end rounded-5 bold" title="novo cliente" (click)="novoCliente()"><i
         class="bi bi-plus"></i>Novo</button>
+
+<form (keydown.enter)="onEnterFilterClicked($event)">
+    <div class="mb-3 row">
+        <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Buscar:</label>
+        <div class="col-xs-3 col-sm-auto">
+            <input id="table-filtering-search" class="form-control" type="text" [formControl]="filterCtrl" />
+        </div>
+    </div>
+</form>
 <table class="table table-striped">
     <thead class="table-primary">
         <tr>
-            <th scope="col">Nome Cliente</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Renda Mensal</th>
-            <th scope="col">Data Cadastro</th>
+            <th scope="col" sortable="nomeCliente" (sort)="onSort($event)">Nome Cliente</th>
+            <th scope="col" sortable="cpf" (sort)="onSort($event)">CPF</th>
+            <th scope="col" sortable="rendaMensal" (sort)="onSort($event)">Renda Mensal</th>
+            <th scope="col" sortable="dataCadastro" (sort)="onSort($event)">Data Cadastro</th>
             <th scope="col"></th>
         </tr>
     </thead>
@@ -15,7 +24,7 @@
         {
         <tr>
             <td>{{item.nomeCliente}}</td>
-            <td>{{item.cpf}}</td>
+            <td>{{item.cpf | CPF}}</td>
             <td>{{item.rendaMensal}}</td>
             <td>{{item.dataCadastro|date:'dd/MM/yyyy hh:mm:ss'}}</td>
             <td>
@@ -30,3 +39,5 @@
         }
     </tbody>
 </table>
+<ngb-pagination [collectionSize]="count" [pageSize]="pageSize" [(page)]="page" [boundaryLinks]="true"
+    (pageChange)="pageChanged($event)" aria-label="Paginação de clientes" />
