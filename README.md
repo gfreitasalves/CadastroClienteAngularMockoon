@@ -1,6 +1,10 @@
-# CadastroClienteAngularMockoon
+# Cadastro de Clientes Angular + Mockoon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+# Mockoon
+
+Json de configuração para criar as apis no mockoon
+
+[Moockoon](/clientes.json)
 
 ## Development server
 
