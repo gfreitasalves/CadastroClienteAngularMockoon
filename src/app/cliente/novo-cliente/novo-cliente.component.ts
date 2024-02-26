@@ -5,11 +5,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from '../../services/message.service';
 import { CustomValidatorService } from '../../services/custom-validator.service';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-novo-cliente',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,NgxMaskDirective],
   templateUrl: './novo-cliente.component.html',
   styleUrl: './novo-cliente.component.scss'
 })

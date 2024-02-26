@@ -38,7 +38,7 @@
     </div>
     <div class="form-group">
       <label for="nome">CPF</label>
-      <input type="text" class="form-control" name="cpf" id="cpf" formControlName="cpf" required>
+      <input type="text" class="form-control" name="cpf" id="cpf" formControlName="cpf" mask="000.000.000-00" required>
       @if(submitted && formCliente.controls['cpf'].errors && formCliente.controls['cpf'].errors['required']){
       <div class="text-danger">
         Campo obrigatório.

@@ -5,11 +5,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from '../../services/message.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CustomValidatorService } from '../../services/custom-validator.service';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-editar-cliente',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgxMaskDirective],
   templateUrl: './editar-cliente.component.html',
   styleUrl: './editar-cliente.component.scss'
 })
@@ -60,14 +61,14 @@ export class EditarClienteComponent {
     })
   }
 
-  onSubmit() {   
+  onSubmit() {
     this.submitted = true
-    if (this.formCliente?.valid) {      
-       this.clienteService.updateCliente(this.formCliente.getRawValue())
-         .subscribe(cliente => {
-           this.messageService.showSuccess("Cliente atualizado com sucesso.")
-           this.activeModal.dismiss('Save success');
-         });
+    if (this.formCliente?.valid) {
+      this.clienteService.updateCliente(this.formCliente.getRawValue())
+        .subscribe(cliente => {
+          this.messageService.showSuccess("Cliente atualizado com sucesso.")
+          this.activeModal.dismiss('Save success');
+        });
     }
   }
 }
