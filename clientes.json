@@ -106,28 +106,22 @@
     },
     {
       "key": "Access-Control-Allow-Headers",
-      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
-    }
-  ],
-  "proxyReqHeaders": [
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With,X-filtered-count, X-total-count"
+    },
     {
-      "key": "",
-      "value": ""
+      "key": "Access-Control-Expose-Headers",
+      "value": "X-filtered-count"
     }
   ],
-  "proxyResHeaders": [
-    {
-      "key": "",
-      "value": ""
-    }
-  ],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
   "data": [
     {
       "uuid": "5fdf2343-ee25-45b1-b7d0-a38a2e9133f8",
       "id": "gk0z",
       "name": "Clientes",
       "documentation": "",
-      "value": "[{\"id\":1,\"nomeCliente\":\"Gilberto\",\"cpf\":\"111.222.333-55\",\"dataNascimento\":\"2024-02-02\",\"rendaMensal\":7000,\"email\":\"gilberto@teste.com\",\"dataCadastro\":\"Thu, 22 Feb 2024 17:25:01 GMT\"},{\"id\":2,\"nomeCliente\":\"Ana\",\"cpf\":\"111.111.111-11\",\"dataNascimento\":\"2024-01-31\",\"rendaMensal\":5000,\"email\":\"ana@teste.com\",\"dataCadastro\":\"Thu, 22 Feb 2024 17:25:01 GMT\"}] "
+      "value": "[\r\n    {\r\n        \"id\": 1,\r\n        \"nomeCliente\": \"Gilberto Alves\",\r\n        \"cpf\": \"81785941020\",\r\n        \"dataNascimento\": \"1986-02-02\",\r\n        \"rendaMensal\": 7000,\r\n        \"email\": \"gilberto@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"nomeCliente\": \"Ana Nascimento\",\r\n        \"cpf\": \"21792694040\",\r\n        \"dataNascimento\": \"1980-01-31\",\r\n        \"rendaMensal\": 5000,\r\n        \"email\": \"ana@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 3,\r\n        \"nomeCliente\": \"João Roberto\",\r\n        \"cpf\": \"22352481015\",\r\n        \"dataNascimento\": \"2000-03-10\",\r\n        \"rendaMensal\": 8000,\r\n        \"email\": \"joao@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 4,\r\n        \"nomeCliente\": \"Maria Antonieta\",\r\n        \"cpf\": \"73738491058\",\r\n        \"dataNascimento\": \"1994-05-20\",\r\n        \"rendaMensal\": 6000,\r\n        \"email\": \"maria@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 5,\r\n        \"nomeCliente\": \"Pedro Carlos\",\r\n        \"cpf\": \"73839665035\",\r\n        \"dataNascimento\": \"1998-08-15\",\r\n        \"rendaMensal\": 7500,\r\n        \"email\": \"pedro@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 6,\r\n        \"nomeCliente\": \"Mariana Rios\",\r\n        \"cpf\": \"29158932097\",\r\n        \"dataNascimento\": \"2001-11-30\",\r\n        \"rendaMensal\": 9000,\r\n        \"email\": \"mariana@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 7,\r\n        \"nomeCliente\": \"Carlos Faria\",\r\n        \"cpf\": \"29158932097\",\r\n        \"dataNascimento\": \"2003-10-05\",\r\n        \"rendaMensal\": 5500,\r\n        \"email\": \"carlos@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 8,\r\n        \"nomeCliente\": \"Camila Farani\",\r\n        \"cpf\": \"84160467008\",\r\n        \"dataNascimento\": \"2000-09-12\",\r\n        \"rendaMensal\": 4800,\r\n        \"email\": \"camila@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 9,\r\n        \"nomeCliente\": \"Lucas Neto\",\r\n        \"cpf\": \"15704233007\",\r\n        \"dataNascimento\": \"1997-04-25\",\r\n        \"rendaMensal\": 6200,\r\n        \"email\": \"lucas@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    },\r\n    {\r\n        \"id\": 10,\r\n        \"nomeCliente\": \"Fernanda Lima\",\r\n        \"cpf\": \"34990348087\",\r\n        \"dataNascimento\": \"1980-07-08\",\r\n        \"rendaMensal\": 7300,\r\n        \"email\": \"fernanda@teste.com\",\r\n        \"dataCadastro\": \"Thu, 22 Feb 2024 17:25:01 GMT\"\r\n    }\r\n]\r\n"
     }
   ],
   "callbacks": []
